@@ -141,7 +141,7 @@ function App() {
         <>
           <div className="flex justify-between items-center mb-6 p-4 bg-gray-100 rounded-lg shadow-sm">
             <p className="text-lg font-medium">
-              ラウンド: <span className="font-bold">{gameState.currentRound}</span> / <span className="font-bold">{gameState.totalRounds}</span>
+              ラウンド: <span className="font-bold">{Math.min(gameState.currentRound + 1, gameState.totalRounds)}</span> / <span className="font-bold">{gameState.totalRounds}</span>
               {gameState.currentRound < gameState.totalRounds && gameState.roundMultipliers[gameState.currentRound] > 1 && (
                 <span className="ml-2 text-amber-600 font-bold">
                   （{gameState.roundMultipliers[gameState.currentRound]}倍ラウンド）
